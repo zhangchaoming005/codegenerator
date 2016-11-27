@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.jdt.core.IJavaElement"
+            id="com.unit.code.generate.contribution1">
+         <menu
+               label="代码生成"
+               path="additions"
+               id="com.unit.code.generate.code.generate">
+            <separator
+                  name="group1">
+            </separator>
+            <separator
+                  name="group2">
+            </separator>
+         </menu>
+	     <wizard
+	            name="Business Code Generate Wizard"
+	            icon="icons/sample.gif"
+	            class="com.unit.code.generate.wizard.JavaBeanGenerateWizard"
+	            id="businessGenerateWizard">
+	     </wizard>         
+         <action
+               label="Dao(Impl)、Mapper(XML)"
+               class="com.unit.code.generate.popup.actions.RepositoryGenerateAction"
+               menubarPath="com.unit.code.generate.code.generate/group1"
+               enablesFor="1"
+               id="com.unit.code.generate.repositoryAction">
+         </action>
+         <action
+               label="Dao、Mapper.xml"
+               class="com.unit.code.generate.popup.actions.SimpleRepositoryGenerateAction"
+               menubarPath="com.unit.code.generate.code.generate/group1"
+               enablesFor="1"
+               id="com.unit.code.generate.simpleRepositoryAction">
+         </action>
+         <action
+               label="VO、Transfer" 
+               class="com.unit.code.generate.popup.actions.VoTransferGenerateAction"
+               menubarPath="com.unit.code.generate.code.generate/group1"
+               enablesFor="1"
+               id="com.unit.code.generate.voTransferAction">
+         </action>
+         <action
+               label="JavaBean" 
+               class="com.unit.code.generate.popup.actions.JavaBeanGenerateAction"
+               menubarPath="com.unit.code.generate.code.generate/group1"
+               enablesFor="1"
+               id="com.unit.code.generate.javaBeanAction">
+         </action>
+         <action
+               label="单元测试"
+               class="com.unit.code.generate.popup.actions.UnitTestGenerateAction"
+               menubarPath="com.unit.code.generate.code.generate/group2"
+               enablesFor="1"
+               id="com.unit.code.generate.unitTestAction">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

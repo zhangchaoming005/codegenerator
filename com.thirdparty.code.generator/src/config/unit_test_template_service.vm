@@ -1,0 +1,33 @@
+package ${package_name};
+
+import mockit.NonStrictExpectations;
+import mockit.Injectable;
+import mockit.Tested;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+#foreach ($import_tested_class in $import_tested_classes)
+import $import_tested_class;
+#end
+
+public class ${class_name} {
+    
+    @Tested
+    private ${tested_class_name} ${tested_instance_field};
+    
+#foreach ($field in $injectable_field_list)
+    @Injectable
+    $field 
+#end
+
+#foreach ($field in $field_list)
+    $field 
+#end
+
+$setup_list	
+
+#foreach ($method in $test_methods)
+$method
+#end
+
+}

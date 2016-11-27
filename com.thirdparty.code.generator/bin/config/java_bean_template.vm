@@ -1,0 +1,16 @@
+package ${package_name};
+
+#foreach ($import_class in $import_classes)
+$import_class
+#end
+
+public class ${class_name} {
+#foreach ($field in $fields)
+$field
+#end
+
+#foreach ($method in $methods)
+$method
+#end
+
+}
