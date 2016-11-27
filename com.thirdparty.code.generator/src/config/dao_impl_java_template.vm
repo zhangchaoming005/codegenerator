@@ -1,7 +1,7 @@
 package ${package_name};
 
 #foreach ($import_class in $import_classes)
-$import_class
+$import_class  
 #end
 
 @Repository
