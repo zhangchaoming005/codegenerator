@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>代码生成插件 - wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"代码生成插件","wgTitle":"代码生成插件","wgCurRevisionId":37009,"wgRevisionId":37009,"wgArticleId":2944,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"代码生成插件","wgRelevantArticleId":2944,"wgRequestId":"e857af1c7a3f8eb6a7885555","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true}});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"zh-cn"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./代码生成插件 - wiki_files/load.php">
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<script async="" src="./代码生成插件 - wiki_files/load(1).php"></script>
+<meta name="generator" content="MediaWiki 1.27.0">
+<script src="./代码生成插件 - wiki_files/load(2).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-代码生成插件 rootpage-代码生成插件 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="zh-CN">代码生成插件</h1>
+
+<h2><span class="mw-headline" id=".E6.8F.92.E4.BB.B6.E7.9B.AE.E7.9A.84">插件目的</span></h2>
+<p>日常开发过程中，有很多重复且无用的工作，往往会影响开发进度。例如，一个含有几十个字段的表，要为其创建JavaBean类就是一样非常繁琐的工作；编写Mybatis的Mapper文件要将字段名与类的属性一一对应，会看的眼花缭乱。
+本插件的目的就是将这些繁琐的工作自动化，从而减轻程序员的工作，让大家能够更加专注于业务逻辑的实现。
+</p>
+<h2><span class="mw-headline" id=".E6.8F.92.E4.BB.B6.E6.94.AF.E6.8C.81.E7.9A.84Eclipse.E7.89.88.E6.9C.AC.E5.92.8C.E9.A1.B9.E7.9B.AE.E7.BB.93.E6.9E.84">插件支持的Eclipse版本和项目结构</span></h2>
+<p>目前主流的Eclipse版本为Juno和Luna，插件能很好支持这两个Eclipse版本。在其他Eclipse版本中如果出现启动问题，可以尝试重新启动。插件适用于Spring MVC + mybatis为基本架构的项目。
+</p>
+<h2><span class="mw-headline" id=".E6.8F.92.E4.BB.B6.E7.9A.84.E4.B8.8B.E8.BD.BD.E5.8F.8A.E5.AE.89.E8.A3.85">插件的下载及安装</span></h2>
+<ul>
+<li>安装，将zip文件解压，并将解压获得的文件夹com.thirdparty.plugin.code.generate放到eclipse的plugins目录下，重启eclipse</li></ul>
+<h2><span class="mw-headline" id=".E6.8F.92.E4.BB.B6.E7.9A.84.E5.8A.9F.E8.83.BD">插件的功能</span></h2>
+<ul><li>安装好插件，在包或者Java类上右键，打开右键菜单，会发现多出一个代码生成的菜单：<a class="image"><img alt="Eclipse代码生成插件.png" src="./代码生成插件 - wiki_files/Eclipse代码生成插件.png" width="796" height="811"></a></li>
+<li>支持生成JavaBean</li>
+<li>支持生成Dao、DaoImpl、Mapper.java、Mapper.xml文件</li>
+<li>支持生成单元测试文件</li>
+<li>文件生成之后，会自动打开</li></ul>
+<h2><span class="mw-headline" id=".E6.8F.92.E4.BB.B6.E7.9A.84.E4.BD.BF.E7.94.A8">插件的使用</span></h2>
+<h3><span class="mw-headline" id=".E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C">准备工作</span></h3>
+<ul><li>所有的业务代码（JavaBean、Dao、DaoImpl、Mapper.java、Mapper.xml）都是基于数据库表的，所以，首先数据表必须准备好。</li>
+<li>配置好test4j.properties。这个文件大家都很熟悉了，为DaoImpl做单元测试的必备文件。该文件的位置在${project_dir}/src/test/resources/test4j.properties。一个示例如下：</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="k">type</span><span class="o">=</span><span class="n">mysql</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">url</span><span class="o">=</span><span class="n">jdbc</span><span class="err">\</span><span class="p">:</span><span class="n">mysql</span><span class="err">\</span><span class="p">:</span><span class="o">//</span><span class="mi">172</span><span class="p">.</span><span class="mi">16</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">201</span><span class="err">\</span><span class="p">:</span><span class="mi">3306</span><span class="o">/</span><span class="n">MM_STORE_0909</span><span class="o">?</span><span class="n">characterEncoding</span><span class="err">\</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">cacheServerConfiguration</span><span class="err">\</span><span class="o">=</span><span class="k">true</span><span class="o">&amp;</span><span class="n">useLocalSessionState</span><span class="err">\</span><span class="o">=</span><span class="k">true</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">userName</span><span class="o">=</span><span class="n">mysqluser</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">password</span><span class="o">=</span><span class="n">mysqluser</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">schemaNames</span><span class="o">=</span><span class="n">MM_STORE_0909</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">driverClassName</span><span class="o">=</span><span class="n">com</span><span class="p">.</span><span class="n">mysql</span><span class="p">.</span><span class="n">jdbc</span><span class="p">.</span><span class="n">Driver</span>
+<span class="n">stats</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="k">only</span><span class="p">.</span><span class="n">testdb</span><span class="p">.</span><span class="n">allowing</span><span class="o">=</span><span class="k">false</span>
+
+
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="k">type</span><span class="o">=</span><span class="n">mysql</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">url</span><span class="o">=</span><span class="n">jdbc</span><span class="err">\</span><span class="p">:</span><span class="n">mysql</span><span class="err">\</span><span class="p">:</span><span class="o">//</span><span class="mi">172</span><span class="p">.</span><span class="mi">16</span><span class="p">.</span><span class="mi">114</span><span class="p">.</span><span class="mi">9</span><span class="err">\</span><span class="p">:</span><span class="mi">3306</span><span class="o">/</span><span class="n">MM_CC</span><span class="o">?</span><span class="n">characterEncoding</span><span class="err">\</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">cacheServerConfiguration</span><span class="err">\</span><span class="o">=</span><span class="k">true</span><span class="o">&amp;</span><span class="n">useLocalSessionState</span><span class="err">\</span><span class="o">=</span><span class="k">true</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">userName</span><span class="o">=</span><span class="n">mysqluser</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">password</span><span class="o">=</span><span class="n">mysqluser</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">schemaNames</span><span class="o">=</span><span class="n">MM_CC</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="n">driverClassName</span><span class="o">=</span><span class="n">com</span><span class="p">.</span><span class="n">mysql</span><span class="p">.</span><span class="n">jdbc</span><span class="p">.</span><span class="n">Driver</span>
+<span class="n">cc</span><span class="p">.</span><span class="k">database</span><span class="p">.</span><span class="k">only</span><span class="p">.</span><span class="n">testdb</span><span class="p">.</span><span class="n">allowing</span><span class="o">=</span><span class="k">false</span>
+</pre></div>
+<ul><li>test4j.properties中的数据库前缀，例如上面的stats、cc，将作为插件中选择数据库的标识。</li></ul>
+<h3><span class="mw-headline" id=".E7.94.9F.E6.88.90JavaBean">生成JavaBean</span></h3>
+<ul><li>选择要将JavaBean生成到哪个包下。</li>
+<li>右键菜单中，选择【代码生成】-【JavaBean】，会弹出如下菜单</li></ul>
+<p><a href="http://wiki.mm.com/index.php?title=%E6%96%87%E4%BB%B6:Eclipse%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E8%A1%A8.png" class="image"><img alt="Eclipse代码生成插件-选择数据表.png" src="./代码生成插件 - wiki_files/Eclipse代码生成插件-选择数据表.png" width="522" height="445"></a>
+</p>
+<ul><li>选择数据库，并填写数据表的名字，单击【确定】，那么对应的Java Bean会生成到当前包，并自动打开。</li>
+<li>一个简单的生成实例如下（该例子只展示了几个字段，事实上该表有30多个字段）</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kn">package</span> <span class="nn">com.mm.ocean.cc.activity.dao</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Activity</span> <span class="o">{</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 主键ID</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 活动名称</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 活动类型，九宫格（SUDOKU），刮刮乐（SCRATCH）</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">type</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * MZOS版本</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mzos</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 支持的客户端版本，</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">supportVersions</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 活动开始时间</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">Date</span> <span class="n">startTime</span><span class="o">;</span>
+
+    <span class="cm">/** </span>
+<span class="cm">     * 活动结束时间</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">Date</span> <span class="n">endTime</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getId</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span> <span class="n">String</span> <span class="n">name</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getType</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">type</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setType</span><span class="o">(</span> <span class="n">String</span> <span class="n">type</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMzos</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mzos</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMzos</span><span class="o">(</span> <span class="n">String</span> <span class="n">mzos</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mzos</span> <span class="o">=</span> <span class="n">mzos</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getSupportVersions</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">supportVersions</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSupportVersions</span><span class="o">(</span> <span class="n">String</span> <span class="n">supportVersions</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">supportVersions</span> <span class="o">=</span> <span class="n">supportVersions</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getStartTime</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">startTime</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStartTime</span><span class="o">(</span> <span class="n">Date</span> <span class="n">startTime</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">startTime</span> <span class="o">=</span> <span class="n">startTime</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Date</span> <span class="nf">getEndTime</span><span class="o">(</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">endTime</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEndTime</span><span class="o">(</span> <span class="n">Date</span> <span class="n">endTime</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">endTime</span> <span class="o">=</span> <span class="n">endTime</span><span class="o">;</span>
+    <span class="o">}</span>
+
+ <span class="o">}</span>
+</pre></div>
+<ul><li>在包下，同名文件已存在，如何处理</li></ul>
+<p>因为Java Bean往往与数据表一一对应，因此，如果有同名存在，会直接覆盖
+</p>
+<ul><li>选择的包错了，或者应该放在其他项目怎么办</li></ul>
+<p>可以直接拖动到正确的项目，或者包下即可。因为有的domain是单独的项目，而只存储domain的项目，是不会有单元测试的test4j.properties文件的。因此，可以在service项目下生成，然后手动拖到domain项目中。
+</p>
+<h3><span class="mw-headline" id=".E7.94.9F.E6.88.90VO.E3.80.81Transfer.E4.B8.A4.E4.B8.AA.E6.96.87.E4.BB.B6">生成VO、Transfer两个文件</span></h3>
+<p>生成VO与JavaBean类一致，Transfer是将VO与JavaBean进行转换。
+</p>
+<h3><span class="mw-headline" id=".E7.94.9F.E6.88.90Dao.E3.80.81Mapper.xml.E4.B8.A4.E4.B8.AA.E6.96.87.E4.BB.B6">生成Dao、Mapper.xml两个文件</span></h3>
+<ul><li>有的项目组使用的是Dao + Mapper.xml的两个文件的形式，而不是Dao + DaoImpl + Mapper + Mapper.xml的形式。生成方式与后面的四个文件的形式相似，统一在下面叙述。</li></ul>
+<h3><span class="mw-headline" id=".E7.94.9F.E6.88.90Dao.28Impl.29.E3.80.81Mapper.28xml.29.E5.9B.9B.E4.B8.AA.E6.96.87.E4.BB.B6">生成Dao(Impl)、Mapper(xml)四个文件</span></h3>
+<ul><li>为什么要与JavaBean的生成分成两个菜单</li></ul>
+<p>因为JavaBean的包与这四个文件之间并不存在某种固定的规则。而这四个文件都需要引用到JavaBean的全名，因此，需要首先确定JavaBean的全路径。
+</p>
+<ul><li>JavaBean由于拖动，其所在的包与原始生成的包不同，生成这四个文件时能自动引用吗</li></ul>
+<p>可以，只要JavaBean在当前项目，或者当前项目所引用的源码中。例如JavaBean原本在service项目中生成，将其拖动到domain项目中，service项目依赖了domain，那么生成这四个文件时，依然可以自动获取。但是如果JavaBean中的属性增加或减少，与原始数据表字段数不一致，就无法自动识别
+</p>
+<ul><li>选择代码存放的包</li></ul>
+<p>这个时候就要慎重了，选好代码存放的包。可以是dao、dao.impl、dao.impl.mysql中的任何一个，例如com.mm.ocean.cc.activity.dao、com.mm.ocean.cc.activity.dao.impl、com.mm.ocean.cc.activity.dao.impl.mysql；还可以是无dao路径，例如com.mm.ocean.cc.activity，此时，生成的文件均会放在com.mm.ocean.cc.activity.dao、com.mm.ocean.cc.activity.dao.impl、com.mm.ocean.cc.activity.dao.impl.mysql，同时Mapper.xml会放在src/main/resources对应的目录下。
+</p>
+<ul><li>选择数据库与数据表</li></ul>
+<p>右键菜单中，选择【代码生成】|【Dao(Impl)、Mapper(xml)】，同样弹出选择数据库和数据表对话框
+<a href="http://wiki.mm.com/index.php?title=%E6%96%87%E4%BB%B6:Eclipse%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6-%E7%94%9F%E6%88%90dao.png" class="image"><img alt="Eclipse代码生成插件-生成dao.png" src="./代码生成插件 - wiki_files/Eclipse代码生成插件-生成dao.png" width="531" height="447"></a>
+</p>
+<ul><li>生成的Dao代码示例</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kn">package</span> <span class="nn">com.mm.cc.activity.dao</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.mm.cc.domain.Activity</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ActivityDao</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="n">Activity</span> <span class="nf">getById</span><span class="o">(</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addActivity</span><span class="o">(</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateById</span><span class="o">(</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteById</span><span class="o">(</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">);</span>
+
+<span class="o">}</span>
+</pre></div>
+<ul><li>生成的DaoImpl代码示例</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kn">package</span> <span class="nn">com.mm.cc.activity.dao.impl</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Repository</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mm.cc.domain.Activity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mm.cc.activity.dao.ActivityDao</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mm.cc.activity.dao.impl.mysql.ActivityMapper</span><span class="o">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ActivityDaoImpl</span> <span class="kd">implements</span> <span class="n">ActivityDao</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ActivityMapper</span> <span class="n">activityMapper</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Activity</span> <span class="nf">getById</span><span class="o">(</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">activityMapper</span><span class="o">.</span><span class="na">getById</span><span class="o">(</span> <span class="n">id</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addActivity</span><span class="o">(</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">activityMapper</span><span class="o">.</span><span class="na">addActivity</span><span class="o">(</span> <span class="n">activity</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateById</span><span class="o">(</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">activityMapper</span><span class="o">.</span><span class="na">updateById</span><span class="o">(</span> <span class="n">activity</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteById</span><span class="o">(</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">activityMapper</span><span class="o">.</span><span class="na">deleteById</span><span class="o">(</span> <span class="n">id</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+<ul><li>生成的Mapper代码示例</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="kn">package</span> <span class="nn">com.mm.cc.activity.dao.impl.mysql</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.ibatis.annotations.Param</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Repository</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mm.cc.domain.Activity</span><span class="o">;</span>
+
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ActivityMapper</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="n">Activity</span> <span class="nf">getById</span><span class="o">(</span> <span class="nd">@Param</span><span class="o">(</span> <span class="s">"id"</span> <span class="o">)</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addActivity</span><span class="o">(</span> <span class="nd">@Param</span><span class="o">(</span> <span class="s">"activity"</span> <span class="o">)</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateById</span><span class="o">(</span> <span class="nd">@Param</span><span class="o">(</span> <span class="s">"activity"</span> <span class="o">)</span> <span class="n">Activity</span> <span class="n">activity</span> <span class="o">);</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteById</span><span class="o">(</span> <span class="nd">@Param</span><span class="o">(</span> <span class="s">"id"</span> <span class="o">)</span> <span class="n">Integer</span> <span class="n">id</span> <span class="o">);</span>
+
+<span class="o">}</span>
+</pre></div>
+<ul><li>生成的Mapper.xml代码示例（注意，select语句会包含所有字段，insert语句包含除自增字段外的所有字段，update语句除主键外的所有字段）</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span>
+<span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">"com.mm.cc.activity.dao.impl.mysql.ActivityMapper"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"getById"</span> <span class="na">resultType=</span><span class="s">"com.mm.cc.domain.Activity"</span><span class="nt">&gt;</span>
+        SELECT A.FID id,
+               A.FNAME name,
+               A.FTYPE type,
+               A.FMZOS mzos,
+               A.FSUPPORT_VERSIONS supportVersions,
+               A.FSTART_TIME startTime,
+               A.FEND_TIME endTime,
+               A.FICON icon,
+               A.FMORE_CHANCE moreChance,
+               A.FDECLARATION declaration,
+               A.FBG_COLOR bgColor,
+               A.FTOP_BG topBg,
+               A.FTOP_COLOR topColor,
+               A.FTITLE_VERTICAL_LINE titleVerticalLine,
+               A.FPRIMARY_TITLE_COLOR primaryTitleColor,
+               A.FSECONDARY_TITLE_COLOR secondaryTitleColor,
+               A.FPARAGRAPH_LINE_COLOR paragraphLineColor,
+               A.FSPLIT_LINE_COLOR splitLineColor,
+               A.FSTAR_COLOR starColor,
+               A.FSTAR_BG starBg,
+               A.FDOWN_BUTTON_COLOR downButtonColor,
+               A.FDOWN_PROGRESS_COLOR downProgressColor,
+               A.FTEXT_COLOR textColor,
+               A.FBG_MUSIC bgMusic,
+               A.FACTION_MUSIC actionMusic,
+               A.FEXTRA_CSS extraCss,
+               A.FEARNED_POINTS_PER_DOWN earnedPointsPerDown,
+               A.FEXPEND_POINTS_PER_LOTTERY expendPointsPerLottery,
+               A.FINDEX_URL indexUrl,
+               A.FCREATE_TIME createTime,
+               A.FUPDATE_TIME updateTime,
+               A.FRETURN_LOTTERY returnLottery,
+               A.FFONT_BG fontBg,
+               A.FTOP_ICON_COLOR topIconColor
+        FROM T_CC_ACTIVITY A
+        WHERE A.FID=#{id}
+    <span class="nt">&lt;/select&gt;</span>
+
+    <span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">"addActivity"</span> <span class="na">useGeneratedKeys=</span><span class="s">"true"</span> <span class="na">keyProperty=</span><span class="s">"activity.id"</span><span class="nt">&gt;</span>
+        INSERT INTO T_CC_ACTIVITY(
+               FNAME, FTYPE, FMZOS, FSUPPORT_VERSIONS, FSTART_TIME, 
+               FEND_TIME, FICON, FMORE_CHANCE, FDECLARATION, FBG_COLOR, 
+               FTOP_BG, FTOP_COLOR, FTITLE_VERTICAL_LINE, FPRIMARY_TITLE_COLOR, FSECONDARY_TITLE_COLOR, 
+               FPARAGRAPH_LINE_COLOR, FSPLIT_LINE_COLOR, FSTAR_COLOR, FSTAR_BG, FDOWN_BUTTON_COLOR, 
+               FDOWN_PROGRESS_COLOR, FTEXT_COLOR, FBG_MUSIC, FACTION_MUSIC, FEXTRA_CSS, 
+               FEARNED_POINTS_PER_DOWN, FEXPEND_POINTS_PER_LOTTERY, FINDEX_URL, FCREATE_TIME, FUPDATE_TIME, 
+               FRETURN_LOTTERY, FFONT_BG, FTOP_ICON_COLOR)
+        VALUES(#{activity.name}, #{activity.type}, #{activity.mzos}, #{activity.supportVersions}, #{activity.startTime}, 
+               #{activity.endTime}, #{activity.icon}, #{activity.moreChance}, #{activity.declaration}, #{activity.bgColor}, 
+               #{activity.topBg}, #{activity.topColor}, #{activity.titleVerticalLine}, #{activity.primaryTitleColor}, #{activity.secondaryTitleColor}, 
+               #{activity.paragraphLineColor}, #{activity.splitLineColor}, #{activity.starColor}, #{activity.starBg}, #{activity.downButtonColor}, 
+               #{activity.downProgressColor}, #{activity.textColor}, #{activity.bgMusic}, #{activity.actionMusic}, #{activity.extraCss}, 
+               #{activity.earnedPointsPerDown}, #{activity.expendPointsPerLottery}, #{activity.indexUrl}, #{activity.createTime}, #{activity.updateTime}, 
+               #{activity.returnLottery}, #{activity.fontBg}, #{activity.topIconColor})
+    <span class="nt">&lt;/insert&gt;</span>
+
+    <span class="nt">&lt;update</span> <span class="na">id=</span><span class="s">"updateById"</span><span class="nt">&gt;</span>
+        UPDATE T_CC_ACTIVITY SET FNAME=#{activity.name}, FTYPE=#{activity.type}, FMZOS=#{activity.mzos}, FSUPPORT_VERSIONS=#{activity.supportVersions}, FSTART_TIME=#{activity.startTime}, 
+               FEND_TIME=#{activity.endTime}, FICON=#{activity.icon}, FMORE_CHANCE=#{activity.moreChance}, FDECLARATION=#{activity.declaration}, FBG_COLOR=#{activity.bgColor}, 
+               FTOP_BG=#{activity.topBg}, FTOP_COLOR=#{activity.topColor}, FTITLE_VERTICAL_LINE=#{activity.titleVerticalLine}, FPRIMARY_TITLE_COLOR=#{activity.primaryTitleColor}, FSECONDARY_TITLE_COLOR=#{activity.secondaryTitleColor}, 
+               FPARAGRAPH_LINE_COLOR=#{activity.paragraphLineColor}, FSPLIT_LINE_COLOR=#{activity.splitLineColor}, FSTAR_COLOR=#{activity.starColor}, FSTAR_BG=#{activity.starBg}, FDOWN_BUTTON_COLOR=#{activity.downButtonColor}, 
+               FDOWN_PROGRESS_COLOR=#{activity.downProgressColor}, FTEXT_COLOR=#{activity.textColor}, FBG_MUSIC=#{activity.bgMusic}, FACTION_MUSIC=#{activity.actionMusic}, FEXTRA_CSS=#{activity.extraCss}, 
+               FEARNED_POINTS_PER_DOWN=#{activity.earnedPointsPerDown}, FEXPEND_POINTS_PER_LOTTERY=#{activity.expendPointsPerLottery}, FINDEX_URL=#{activity.indexUrl}, FCREATE_TIME=#{activity.createTime}, FUPDATE_TIME=#{activity.updateTime}, 
+               FRETURN_LOTTERY=#{activity.returnLottery}, FFONT_BG=#{activity.fontBg}, FTOP_ICON_COLOR=#{activity.topIconColor}
+        WHERE FID=#{activity.id}
+    <span class="nt">&lt;/update&gt;</span>
+
+    <span class="nt">&lt;delete</span> <span class="na">id=</span><span class="s">"deleteById"</span><span class="nt">&gt;</span>
+        DELETE FROM T_CC_ACTIVITY WHERE FID=#{id}
+    <span class="nt">&lt;/delete&gt;</span>
+
+<span class="nt">&lt;/mapper&gt;</span>
+</pre></div>
+<ul><li>同名文件的处理</li></ul>
+<p>如果在同一目录下已经生成过四个文件中的任意一个，再次生成时，将会以xxxDao1.java、xxxDaoImpl1.java、xxxMapper1.java、xxxMapper1.xml为名的文件，而不会覆盖原有文件
+</p>
+<h3><span class="mw-headline" id=".E7.94.9F.E6.88.90.E5.8D.95.E5.85.83.E6.B5.8B.E8.AF.95">生成单元测试</span></h3>
+<ul><li>支持生成DaoImpl、Service、ServiceImpl为后缀的java类</li>
+<li>选择要生成单元测试的Java类，右键菜单中选择【代码生成】|【单元测试】将会生成对应的单元测试文件，并自动放至test/src/java下的同包名下</li>
+<li>同名文件与Dao、DaoImpl的处理相同，不会覆盖</li>
+<li>生成的单元测试文件，并非最终结果，可能还需要手动调整</li>
+<li>其中Service的单元测试是按mock方式进行，而DaoImpl的单元测试，是真实连接数据库进行。如果有未导入类错误，可以alt+shift+o手动导入一下</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171013015257
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.825 seconds
+Preprocessor visited node count: 96/1000000
+Preprocessor generated node count: 168/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key new_my_wiki-wiki_:pcache:idhash:2944-0!*!*!!zh-cn!5!* and timestamp 20171013015257 and revision id 37009
+ -->
+</div>					
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>导航菜单</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">个人工具</h3>
+						<ul>
+							<li id="pt-login"><a href="http://wiki.mm.com/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6" title="我们鼓励您登录；然而，这不是强制性的[alt-shift-o]" accesskey="o"></a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">命名空间</h3>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>变种</span><a href="http://wiki.mm.com/index.php?title=%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+
+			</div>
+
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1066});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
