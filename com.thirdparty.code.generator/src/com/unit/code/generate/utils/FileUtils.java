@@ -5,7 +5,7 @@ import java.io.File;
 public class FileUtils {
 
 	public static void main( String[] args ) {
-		String path = "E:\\eclipse4\\runtime-EclipseApplication\\test\\bin\\com\\meizu\\test\\A.java";
+		String path = "E:\\eclipse4\\runtime-EclipseApplication\\test\\bin\\com\\mm\\test\\A.java";
 
 		validateDir( path );
 	}

@@ -90,12 +90,8 @@ public class DbUtils {
 	}
 	
 	public static String generatePropertyNameWithColumnName( String columnName ) {
-		if( columnName.equals( "FID" ) ) {
-			return "id";
-		}
-
 		columnName = columnName.toUpperCase().replaceFirst( "(\\w{2,})(ID)$", "$1_$2" );
-		String[] pieces = columnName.replaceFirst( "^F", "" ).split( "_" );
+		String[] pieces = columnName.split( "_" );
 
 		StringBuilder builder = new StringBuilder();
 		for( int i = 0; i < pieces.length; i++ ) {

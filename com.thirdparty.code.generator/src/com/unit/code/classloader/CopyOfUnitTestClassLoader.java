@@ -86,7 +86,7 @@ public class CopyOfUnitTestClassLoader extends ClassLoader {
 
 	private void loadJarFiles() {
 		try {
-			// °üÂ·¾¶¶¨Òå
+			// åŒ…è·¯å¾„å®šä¹‰
 			URL urls = new URL("file:/E:/eclipse4/runtime-EclipseApplication/test/lib/spring-beans-3.2.3.RELEASE.jar");
 			// URL url1 = new
 			// URL("file:/E:/eclipse4/runtime-EclipseApplication/test/lib/spring-core-3.2.3.RELEASE.jar");
@@ -122,7 +122,7 @@ public class CopyOfUnitTestClassLoader extends ClassLoader {
 	@SuppressWarnings({ "rawtypes", "finally" })
 	public Class getClassByFile(String fileName) throws Exception {
 		File classFile = new File(fileName);
-		// Ò»°ãµÄclassÎÄ¼şÍ¨³£¶¼Ğ¡ÓÚ100k£¬Èç¹ûÏÖÊµÇé¿ö³¬³öÕâ¸ö·¶Î§¿ÉÒÔ·Å´ó³¤¶È
+		// ä¸€èˆ¬çš„classæ–‡ä»¶é€šå¸¸éƒ½å°äº100kï¼Œå¦‚æœç°å®æƒ…å†µè¶…å‡ºè¿™ä¸ªèŒƒå›´å¯ä»¥æ”¾å¤§é•¿åº¦
 		byte bytes[] = new byte[102400];
 		FileInputStream fis = null;
 		Class clazz = null;
@@ -164,7 +164,7 @@ public class CopyOfUnitTestClassLoader extends ClassLoader {
 		try {
 //			Class pooClazz = this.loadClass("javassist.ClassPool"); pooClazz.getClassLoader().getParent();
 //			Method getDefaultPoolMethod = pooClazz.getDeclaredMethod("getDefault");
-//			ClassPool.getDefault().get("com.meizu.test.BusinessClass");
+//			ClassPool.getDefault().get("com.mm.test.BusinessClass");
 //			Object pooClazzInstance = pooClazz.newInstance();
 //			Object poolInstance = getDefaultPoolMethod.invoke(pooClazz, new Object[0]);
 //			Method getCtClassMethod = pooClazz.getMethod("get", String.class);
